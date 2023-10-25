@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ movieDetails.title }}</title>
+</head>
+
+<body>
+    <div class="details-row">
+        {{!-- Movie details --}}
+        <div class="details-box">
+            <div class="movie-details-box">
+                <h1>{{ movieDetails.title }}</h1>
+                <img src="https://image.tmdb.org/t/p/w500/{{ movieDetails.backdrop_path }}" />
+                <p>Release Date: {{ movieDetails.release_date }}</p>
+                <p>{{ movieDetails.overview }}</p>
+            </div>
+            {{!-- Soundtrack album details --}}
+            {{#if soundtrackAlbum}}
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/{{ soundtrackAlbum.id }}"
+                frameBorder="0" width="110%" allow="encrypted-media"></iframe>
+            {{else}}
+            <p>No album available</p>
+            {{/if}}
+        </div>
+
+        {{!-- Similar album details --}}
+        <h2>Similar Movies</h2>
+        {{#if recommendedMovies.length}}
+        <div class="rec">
+            {{#each recommendedMovies}}
+            <div class="rec-item">
+                <h2><a href="/movie-details/{{ id }}">{{ this.title }}</a></h2>
+            </div>
+            {{/each}}
+        </div>
+        {{else}}
+        <p>No similar things could be found.</p>
+        {{/if}}
+
+    </div>
+</body>
+
+</html>

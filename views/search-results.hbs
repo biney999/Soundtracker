@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Results</title>
+</head>
+
+<body>
+    <div class="search-container">
+        {{!-- Search result array --}}
+        <h1>Search Results</h1>
+        {{#if movies.length}} 
+        <ul>
+            {{#each movies}}
+            <li class="search-results">
+                <h2><a href="/movie-details/{{id}}">{{title}}</a></h2>
+                <p>Release Date: {{release_date}}</p>
+                <p>{{overview}}</p>
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <p>No movies found.</p>
+        {{/if}}
+    </div>
+</body>
+
+</html>

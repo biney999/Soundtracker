@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+    {{!-- logo --}}
+    <h1 class="header-logo">
+      <a class="logo" href="/">Soundtracker</a>
+    </h1>
+    {{!-- search bar --}}
+    <div class="searchbox-container">
+      <form action="/tmdb/search-movies" method="GET">
+        <input type="text" name="q" placeholder="Search for movies (and your dreams)" class="search-bar">
+        <button type="submit" class="search-button">Search</button>
+      </form>
+    </div>
+  </header>
+  {{{body}}}
+</body>
+
+</html>
